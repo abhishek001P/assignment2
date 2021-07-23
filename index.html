@@ -1,0 +1,2260 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, iniial-scale=1.0"/>
+        <title>
+            My PhoneBook
+        </title>
+        <style>
+            .sidenav{
+                height: 100%;
+                width: 0; 
+                position: fixed; 
+                z-index: 1; 
+                top: 0; 
+                left: 0;
+                background-color: #111; 
+                overflow-x: hidden; 
+                padding-top: 60px;
+                transition: 0.5s;
+            }
+            .sidenav a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+            .sidenav a:hover {
+                color: #f1f1f1;
+            }
+            .sidenav .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
+            @media screen and (max-height: 450px) {
+                .sidenav {padding-top: 15px;}
+                .sidenav a {font-size: 18px;}
+            }
+            .header{
+                z-index: 1; 
+                top: -10; 
+                width:100%;
+                min-height: 60vh;
+      background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)),
+      url("https://www.laurellynn.com/genealogy/images/kennedy/oh_birth_record_minnie_ethelyn_kennedy.jpg")center/cover no-repeat fixed;
+     /* flex-direction: column;*/
+     margin-top: 0; 
+}
+.hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-attachment: fixed;
+    width: 100%;
+    height: 60%;
+}
+.firstletter{
+    font-size:140px;
+}
+.hero .title{
+    color: #fff;
+    font-size: 100px;
+    font-family: 'Great Vibes', cursive;
+    text-shadow: 5px 5px 10px rgb(4, 192, 255);
+    animation-name: htext;
+    animation-duration: 3s ;
+}
+@keyframes htext {
+    0%   { color :rgb(4, 192, 255); top:-500px;}
+  100%   { color : #fff;top:0px;}
+  }
+  * {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 5px;
+}
+
+#myUL li{
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  
+  display: block
+}
+#myUL li a{
+    text-decoration: none;
+  font-size: 24px;
+  font-weight: bolder;
+  color: #111;
+
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+.img-circular{
+ width: 100px;
+ height: 100px;
+ background-image: url('https://as1.ftcdn.net/jpg/02/84/98/04/500_F_284980446_xmQh6equqWsgj9LM02vDFaANAdyo5LJt.jpg');
+ background-size: cover;
+ display:block;
+ float:right;
+ border-radius: 50px;
+ -webkit-border-radius: 500px;
+ -moz-border-radius: 500px;
+}
+        </style>
+<!---------------------------------------------------head close------------------------------------------------------------------------------>
+    </head>
+    <body>
+
+<header class="header">
+    <div id="mySideNav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+    </div>
+<span style="font-size:30px;cursor:pointer;color: rgb(4, 192, 255);" onclick="openNav()">&#9776;</span>
+    <div class="hero">
+        <h1 class="title"><span class="firstletter">M</span>y <span class="firstletter">P</span>honebook</h1>
+    </div>
+
+</header>
+<!----------------------------------------------------headre section ends------------------------------------------------------------------->
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<ul id="myUL">
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">A</div>
+    <li><div id="contact"><a href="#">Abhinav</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Abhishek</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Abhimanyu</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Andy</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Alcazar</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Aston</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Audi</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Acura</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Altroz</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Ameo</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">B</div>
+    <!---------------------------------------------------------------- B ------------------------------------------------------------------------>
+    <li><div id="contact"><a href="#">Buggatti</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Brz</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Baleno</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Bob</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Brezza</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        <!---------------------------------------------------------------- c ------------------------------------------------------------------------>
+    </div></li>
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">C</div>
+    <li><div id="contact"><a href="#">Ciaz</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Carnival</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Creta</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Compass</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Chiron</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Candid</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Cat</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Camaro</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Cruze</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Corolla</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        <!---------------------------------------------------------------- D ------------------------------------------------------------------------>
+        
+    </div></li>
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">D</div>
+    <li><div id="contact"><a href="#">Divo</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Daewo</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Duster</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Dacia</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Dustin</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Danger</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Denalli</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Dawood</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Don</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Datsun</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <!---------------------------------------------------------------- E ------------------------------------------------------------------------>
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">E</div>
+    <li><div id="contact"><a href="#">E-Class</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Ertiga</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Eclipse</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Endeavour</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Eon</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Everest</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">E Tron</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Evolve</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Evora</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Ecosports</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <!---------------------------------------------------------------- F ------------------------------------------------------------------------>
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">F</div>
+    <li><div id="contact"><a href="#">Ferrari</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Figo</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">F250</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">F350</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Ford</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">F40</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Free Lander</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Force</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Fiat</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">F40</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <!------------------------------------------------------------------g------------------------------------------------------->
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">G</div>
+    <li><div id="contact"><a href="#">G-Wagon</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Gtr</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Gle</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Gls</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Grand America</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">FGixxer</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">German</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Goldwing</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Gold Digger</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Goldy</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <!---------------------------------------------------------------- h -------------------------------------------------------------------->
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">H</div>
+    <li><div id="contact"><a href="#">Harrier</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Hector</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Hector Plus</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">HBX</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Hero</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Huyora</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Hummaer</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Honda</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Home</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Hostel</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <!--------------------------------------------------------------------------I ------------------------------------------------->
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">I</div>
+    <li><div id="contact"><a href="#">India</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Indian</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Ignis</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">i10</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">i20</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">i30</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">i20 elite</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Irony</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Ishaan</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Italy</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        <!------------------------------------------------------ j -------------------------------------------------------------->
+    </div></li>
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">J</div>
+    <li><div id="contact"><a href="#">Jagurar</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">John</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">John Cena</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Jony</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Jordn</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">justing</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Jay</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Jagdish</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Jass</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Joke</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <!----------------------------------------------- k -------------------------------------------------------------------------------->
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">K</div>
+    <li><div id="contact"><a href="#">K 10</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Kawasaki</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Kunal</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Karan</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Karadashian</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Komal</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Kant</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Kanta Bai</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Kona</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><ola href="#">Kola</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <!----------------------------------------------------l ------------------------------------------------------->
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">L</div>
+    <li><div id="contact"><a href="#">Lamborghini</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Lancer</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Land Cruiser</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Land Rover</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Linea</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Long Wheel</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Large</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Long</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Last</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Land Slide</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <!----------------------------------------------------- m ------------------------------------------------------------->
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">M</div>
+    <li><div id="contact"><a href="#">Mustang</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Maserati</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Maruti</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Mega</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Multi</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">M G</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">M3</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">M4</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">M5</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Mini Cooper</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <!-------------------------------------------------- -n  ----------------------------------------------------------->
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">N</div>
+    <li><div id="contact"><a href="#">Nano</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Nuv sport</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Nand</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Neon</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Name</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Narrow</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">NDA</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Nitro</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Neo</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Nasty</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <!------___________________________O __________________________________________________________________________________-->
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">O</div>
+    <li><div id="contact"><a href="#">Omni</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Omega</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Otimus Prime</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Octopus</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Octavia</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Octane</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Oreo</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Old</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Ozone</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Outlander</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">P</div>
+    <li><div id="contact"><a href="#">Punto</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Pale</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Power</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Polo</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Polo gt</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Pagani</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Panda</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Pandey</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">A</div>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">A</div>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">A</div>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">A</div>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">A</div>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">A</div>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">A</div>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">A</div>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">A</div>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <div style="background-color: rgb(4, 192, 255);height:35px;font-size: 25px;text-align: center;">A</div>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+    <li><div id="contact"><a href="#">Adele</a>
+        <div class="img-circular"></div>
+        <br><br>
+        <span style="font-size:18px;color: rgb(4, 192, 255);" onclick="openNav()">&#x260E;</span>&nbsp;9876543210<br>
+        <span style="font-size:18px;" onclick="openNav()">&#x1F3E1;</span>&nbsp;Address: Haryana<br>
+        <span style="font-size:18px; " onclick="openNav()">&#x1F4E7;</span>&nbsp;Email:abc@gmail.com
+        
+    </div></li>
+
+    
+    
+  </ul>
+  <!-----------------------------------------------------------java script----------------------------------------------------------------------->
+<script>
+    function openNav() {
+      document.getElementById("mySideNav").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySideNav").style.width = "0";
+    }
+    function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+    </body>
+    </html>
